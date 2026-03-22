@@ -8,12 +8,12 @@
 请帮我安装这个 opencode 自定义主题，并确保它生效。
 
 目标文件来源：
-- D:\透明opencode终端背景\transparent.json
+- 请按当前机器上的实际文件位置读取 `transparent.json`
 
 请按下面要求执行：
 1. 确认 `opencode` 的用户配置目录下存在 `themes` 文件夹；如果不存在就创建。
    推荐相对位置：`~/.config/opencode/themes/`
-2. 把 `D:\透明opencode终端背景\transparent.json` 复制到：
+2. 把主题文件 `transparent.json` 复制到：
    `~/.config/opencode/themes/transparent.json`
 3. 打开并修改：
    `~/.config/opencode/opencode.json`
@@ -26,11 +26,10 @@
 7. 最后告诉我需要手动重启 `opencode` 才会生效。
 ```
 
-如果你想把这整个文件路径直接发给 AI，也可以说：
+如果你想把这整个说明文件路径直接发给 AI，也可以说：
 
 ```text
-请阅读并执行这个说明文件：
-D:\透明opencode终端背景\README.md
+请阅读并执行这个说明文件，然后按其中的相对路径安装主题。
 ```
 
 ---
@@ -38,7 +37,7 @@ D:\透明opencode终端背景\README.md
 这是一个给 `opencode` CLI / TUI 使用的自定义主题文件，目标是：
 
 - 尽量让 opencode 主界面背景透明
-- 让 PowerShell / 终端背景尽可能露出来
+- 让宿主终端背景尽可能露出来
 - 在 `/model` 这类菜单里保留一点极轻的菜单托底，避免完全混在一起
 
 ---
@@ -53,7 +52,7 @@ D:\透明opencode终端背景\README.md
 
 ## 放到哪里
 
-把 `transparent.json` 放到下面这个目录：
+把 `transparent.json` 放到用户配置目录下的这个位置：
 
 `~/.config/opencode/themes/`
 
@@ -159,8 +158,21 @@ D:\透明opencode终端背景\README.md
 
 ---
 
-## 导出包名称
+## 跨平台说明
 
-当前导出目录名称：
+这份 README 使用的是相对用户目录写法：
 
-`D:\透明opencode终端背景\`
+- `~/.config/opencode/themes/transparent.json`
+- `~/.config/opencode/opencode.json`
+
+其中：
+
+- Linux：通常可直接按这个路径使用
+- macOS：如果你的 opencode 配置目录不同，请让 AI 先定位实际配置目录，再放到对应 `opencode/themes/` 下
+- Windows：不同环境可能会把 `~` 映射到不同用户目录，原则上仍然是“用户目录下的 `.config/opencode/`”
+
+重点不是某个固定绝对路径，而是：
+
+1. 找到当前用户的 `opencode` 配置目录
+2. 把主题文件放到该目录下的 `themes/transparent.json`
+3. 在同级的 `opencode.json` 顶层设置 `"theme": "transparent"`
