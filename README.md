@@ -1,0 +1,2 @@
+# opencode_transparent_theme
+透明的opencodecli背景，让你的终端背景在opencode中展示
